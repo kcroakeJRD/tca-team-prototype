@@ -276,21 +276,30 @@ input[type=submit], button { display: inline-block; cursor: pointer; }
 
 .slick-dots li.slick-active button:before { opacity: .75; color: #000; }
 
-.team-header { position: relative; }
+.slick-slider { margin-bottom: 0; padding: 100px 0 0 0; z-index: 2; }
 
-.team-header .wrapper { max-width: 900px; width: 100%; margin: 0 auto; }
+.slick-dots { bottom: 0; position: relative; }
 
-.row-one { background: url(../images/nature.jpg) repeat-x center 50%; height: 500px; width: 100%; transition: background-position 0.5s ease-out; position: absolute; }
+.team-bios .slick-list { margin-bottom: 30px; }
 
-.row-two { background: url(../images/animals.png) repeat-x center 50%; height: 500px; width: 100%; position: absolute; top: 0; transition: background-position 0.5s ease-out; }
+.this { max-width: 500px; margin: 0 auto; text-align: center; box-sizing: border-box; }
 
-.team-controls { width: 300px; background: green; margin: 0 auto; padding: 30px; text-align: center; }
+.team-header { position: relative; min-height: 500px; }
 
-.team-slider img { transform: scale(0.9); transition: transform .25 ease-out; }
+.wrapper { max-width: 745px; width: 100%; margin: 0 auto; box-sizing: border-box; padding: 0 20px; }
 
-.team-slider .slick-current img { transform: scale(1); }
+.row-one { background: url(../images/nature.jpg) repeat-x center 50%; height: 500px; width: 100%; transition: background-position 0.75s ease-out; position: absolute; }
+
+.row-two { z-index: 2; background: url(../images/animals.png) repeat-x center 50%; height: 500px; width: 100%; position: absolute; top: 0; transition: background-position 0.75s ease-out; }
+
+.team-controls { width: 300px; margin: 0 auto; padding: 30px; text-align: center; }
+
+.team-slider img { transform: scale(0.9); transition: transform .5 ease-out; position: relative; bottom: -20px; }
+
+.team-slider .slick-current img { transform: scale(1); bottom: 0; }
 
 /* ========================================================================= */
 /* !MEDIA QUERIES */
 /* ========================================================================= */
 /* @media screen and (max-width: XXXpx) {  } */
+@media screen and (max-width: 786px) { .team-slider .slick-current img { margin: 0 auto; } }

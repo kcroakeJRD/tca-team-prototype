@@ -4,26 +4,66 @@
 
 jQuery(function($){
 
-
 	//Team Page Options
-$(document).ready(function(){
+
 	$('.team-slider').slick({
 		centerMode: true,
 		slidesToShow: 3,
-		centerPadding: '10px'
-	});
-});
+		centerPadding: '10px',
+		arrows: false,
+		dots: false,
+		asNavFor: '.team-bios',
+		responsive: [
+			{
+				breakpoint: 768,
+				settings:{
+					slidesToShow: 1,
+				}
+			}
+		]
 
-	// $('button.prev').on('click', function(){
-	// 	$('.row-two').css('background-position', '-=400 0');
-	// 	$('.row-one').css('background-position', '-=200 0');
-	// 	console.log('clicked Prev');
-	// });
-	// $('button.next').on('click', function(){
-	// 	$('.row-two').css('background-position', '+=400 0');
-	// 	$('.row-one').css('background-position', '+=200 0');
-	// 	console.log('clicked Prev');
-	// });
+	});
+
+	$('.team-bios').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		asNavFor: '.team-slider',
+		dots: true,
+		fade: true,
+		arrows: false,
+		swipe: false
+	});
+	
+	// Navigation Buttons
+	$('button.prev').on('click', function(){
+		$('.row-two').css('background-position', '-=400 0');
+		$('.row-one').css('background-position', '-=200 0');
+		$('.team-slider').slick('slickPrev');
+		$('.team-bios').slick('slickPrev');
+	});
+
+	$('button.next').on('click', function(){
+		$('.row-two').css('background-position', '+=400 0');
+		$('.row-one').css('background-position', '+=200 0');
+		$('.team-slider').slick('slickNext');
+		$('.team-bios').slick('slickNext');
+	});
+
+	// Swipping Actions
+	$('.team-slider').on('swipe', function(event, slick, direction){
+ 		 if(direction === 'left'){
+
+ 			$('.row-two').css('background-position', '-=400 0');
+			$('.row-one').css('background-position', '-=200 0');
+
+ 		 } else if(direction === 'right'){
+
+			$('.row-two').css('background-position', '+=400 0');
+			$('.row-one').css('background-position', '+=200 0');
+
+ 		 }
+
+	});
 
     // PARALLAX
 /*
@@ -60,3 +100,4 @@ $(document).ready(function(){
     */
 
 });
+

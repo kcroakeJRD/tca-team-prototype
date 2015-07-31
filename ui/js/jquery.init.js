@@ -9,7 +9,8 @@ jQuery(function($){
 	$('.team-slider').slick({
 		centerMode: true,
 		slidesToShow: 3,
-		centerPadding: '10px',
+	
+		centerPadding: '20px',
 		arrows: false,
 		dots: false,
 		asNavFor: '.team-bios',
